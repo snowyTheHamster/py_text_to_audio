@@ -13,6 +13,12 @@ pip install beautifulsoup4
 pip install markdown
 ```
 
+or
+
+```
+pip install -r requirements.txt
+```
+
 ## how to use
 
 + prepare a md file in the **scripts_original** folder.
