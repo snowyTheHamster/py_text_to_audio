@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 
 # text file path
-textfile = "gherkin-review.md" # Select the script file for conversion
+textfile = "sample.md" # Select the script file for conversion
 textdir = "scripts_original"
 fullpath = os.path.join(textdir, textfile)
 
@@ -24,10 +24,11 @@ audiofull = os.path.join(audiodir, audiofile)
 
 # convert markdown to text
 html = markdown.markdown(open(fullpath).read())
-script = "".join(BeautifulSoup(html).findAll(text=True))
+script = "".join(BeautifulSoup(html, features="html.parser").findAll(text=True))
+print(script)
 
 
 # initialize tts and save file
 tts = gTTS(script, lang="en-us")
 tts.save(audiofull)
-os.system("mpg123 " + audiofull)
+# os.system("mpg123 " + audiofull) #toggle on/off to play audio automatically
