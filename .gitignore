@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+__pycache__/
+*.mp3
+*.md
+
+!.gitkeep
